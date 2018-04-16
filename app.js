@@ -6,6 +6,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
+const ocrApiRouter = require('./routes/api/ocr');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({limit: '10mb', extended: true })); // for parsing
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/api/ocr', ocrApiRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
