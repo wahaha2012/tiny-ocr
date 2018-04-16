@@ -7,12 +7,20 @@ const ImageLoader = require('../../components/imageLoader');
 const textOcr = require('../../components/textOcr');
 // http://ai.baidu.com/docs#/ImageClassify-API/top
 const carOcr = require('../../components/carOcr');
+const logoOcr = require('../../components/logoOcr');
+const dishOcr = require('../../components/dishOcr');
 
 const getOcrApp = (type) => {
   let app = textOcr;
   switch(type) {
     case 'car':
       app = carOcr;
+      break;
+    case 'logo':
+      app = logoOcr;
+      break;
+    case 'dish':
+      app = dishOcr;
       break;
   }
   return app;
