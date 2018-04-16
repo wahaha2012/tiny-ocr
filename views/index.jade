@@ -1,0 +1,27 @@
+extends layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/index.css')
+block content
+  h1= title
+  .form
+    .web-url
+      select#imageType(name="type", class="select")
+        - var options = ['Text', 'Car', 'Logo', 'Animal', 'Plant', 'Dish', 'Common'];
+        each item in options
+          option(value='#{item}') #{item}
+      input#webUrl(type="text" class="url-input" placeholder="Input Image URL")
+      span.button#loadBtn Load URL
+      span.input
+        input(type='file', accept='image/*', value="Choose File" onchange='openFile(event)')
+        |Select From Computer
+  .preview
+    .img
+      img(id='preview')
+    .textarea
+      textarea#output(name="", cols="30", rows="10")
+  block scripts
+    script(src='javascripts/ajax.js')
+    script(src='javascripts/form.js')
+    
+
