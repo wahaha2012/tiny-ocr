@@ -9,6 +9,7 @@ const textOcr = require('../../components/textOcr');
 const carOcr = require('../../components/carOcr');
 const logoOcr = require('../../components/logoOcr');
 const dishOcr = require('../../components/dishOcr');
+const animalOcr = require('../../components/animalOcr');
 
 const getOcrApp = (type) => {
   let app = textOcr;
@@ -18,6 +19,9 @@ const getOcrApp = (type) => {
       break;
     case 'logo':
       app = logoOcr;
+      break;
+    case 'animal':
+      app = animalOcr;
       break;
     case 'dish':
       app = dishOcr;
